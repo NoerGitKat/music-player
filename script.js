@@ -3,7 +3,7 @@ const playBtn = document.getElementById("play");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 
-const audio = document.querySelector("audio");
+const audioEl = document.querySelector("audio");
 
 const title = document.getElementById("title");
 const artist = document.getElementById("artist");
@@ -40,11 +40,11 @@ function togglePlay() {
   if (!isPlaying) {
     playBtn.classList.replace("fa-play", "fa-pause");
     playBtn.setAttribute("title", "Pause");
-    audio.play();
+    audioEl.play();
   } else {
     playBtn.classList.replace("fa-pause", "fa-play");
     playBtn.setAttribute("title", "Play");
-    audio.pause();
+    audioEl.pause();
   }
 
   isPlaying = !isPlaying;
@@ -75,7 +75,9 @@ function loadSong(song) {
   title.textContent = song.songName;
   artist.textContent = song.artistName;
   coverImg.src = `img/${song.cover}`;
-  audio.src = `audio/${song.songName}.mp3`;
+  audioEl.src = `audio/${song.songName}.mp3`;
+  currentTimeEl.textContent = "0:00";
+  progressBar.style.width = "0%";
 }
 
 /* Progress Bar */
@@ -100,8 +102,21 @@ function calcSongTime(timeUnit, DOMEl) {
   }
 }
 
+function updateSongProgress(event) {
+  const { duration } = audioEl;
+
+  const boxWidth = this.clientWidth;
+  const offsetXWidth = event.offsetX;
+
+  const songProgress = (offsetXWidth / boxWidth) * duration;
+
+  audioEl.currentTime = songProgress;
+  progressBar.style.width = `${songProgress}%`;
+}
+
 // Event handlers
 playBtn.addEventListener("click", togglePlay);
 nextBtn.addEventListener("click", () => changeSong("next"));
 prevBtn.addEventListener("click", () => changeSong("prev"));
-audio.addEventListener("timeupdate", updateProgressBar);
+audioEl.addEventListener("timeupdate", updateProgressBar);
+progressContainer.addEventListener("click", updateSongProgress);
