@@ -13,58 +13,58 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Raleway, sans-serif;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .player-container {
-  height: 31.25rem;
-  width: 25rem;
+  height: 500px;
+  width: 400px;
   background: #e47a7a;
-  border-radius: 20px;
+  border-radius: 1.25rem;
 }
 
 .img-container {
-  height: 18.75rem;
-  width: 18.75rem;
+  height: 300px;
+  width: 300px;
   position: relative;
-  top: -50px;
-  left: 50px;
+  top: -3.125rem;
+  left: 3.125rem;
 }
 
 .img-container img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 5px 30px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 1.25rem;
+  box-shadow: 0 0.3125rem 1.875rem 0.3125rem rgba(0, 0, 0, 0.3);
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 1.5625rem;
   text-align: center;
   margin: 0;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: center;
   font-weight: 400;
-  margin: 5px 0 0;
+  margin: 0.3125rem 0 0;
 }
 
 /* Progress */
 .progress-container {
   background: #fff;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   cursor: pointer;
-  margin: 40px 20px;
-  height: 4px;
+  margin: 2.5rem 1.25rem;
+  height: 0.25rem;
   width: 90%;
 }
 
 .progress {
   background: #242323;
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   height: 100%;
   /* change this to show progress */
   width: 66%;
@@ -73,7 +73,7 @@ h3 {
 
 .duration-wrapper {
   position: relative;
-  top: -25px;
+  top: -1.5625rem;
   display: flex;
   justify-content: space-between;
 }
@@ -81,43 +81,50 @@ h3 {
 /* Controls */
 .player-controls {
   position: relative;
-  top: -15px;
-  left: 120px;
-  width: 200px;
+  top: -0.9375rem;
+  left: 7.5rem;
+  width: 12.5rem;
 }
 
 .fas {
-  font-size: 30px;
+  font-size: 1.875rem;
   color: rgb(129, 129, 129);
-  margin-right: 30px;
+  margin-right: 1.875rem;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.fas:hover {
+  filter: brightness(80%);
 }
 
 .main-button {
-  font-size: 40px;
+  font-size: 2.5rem;
   position: relative;
-  top: 3px;
+  top: 0.1875rem;
 }
 
 /* Media Query: iPhone (Vertical) */
-@media screen and (max-width: 376px) {
+@media screen and (max-width: 23.5rem) {
   .player-container {
     width: 95vw;
   }
 
   .img-container {
-    left: 29px;
+    left: 1.8125rem;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   h3 {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 
   .player-controls {
-    top: -10px;
-    left: 100px;
+    top: -0.625rem;
+    left: 6.25rem;
   }
 }
