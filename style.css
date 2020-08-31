@@ -67,7 +67,7 @@ h3 {
   border-radius: 0.3125rem;
   height: 100%;
   /* change this to show progress */
-  width: 66%;
+  width: 0%;
   transition: width 0.1s linear;
 }
 
