@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <title>Music Player</title>
+  </head>
+  <body>
+    <div class="player-container">
+      <!-- Song -->
+      <div class="img-container">
+        <img src="img/unknown-song.png" alt="Song" />
+      </div>
+      <h2 id="title">A Story About Time</h2>
+      <h3 id="artist">Kazam</h3>
+      <audio src="audio/A Story About Time.mp3"></audio>
+      <!-- Progress -->
+      <div class="progress-container" id="progress-container">
+        <div class="progress" id="progress"></div>
+        <div class="duration-wrapper">
+          <span id="current-time">0:00</span>
+          <span id="duration">2:41</span>
+        </div>
+      </div>
+      <!-- Controls -->
+      <div class="player-controls">
+        <i class="fas fa-backward" id="prev" title="Previous"></i>
+        <i class="fas fa-play main-button" id="play" title="Play"></i>
+        <i class="fas fa-forward" id="next" title="Next"></i>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
